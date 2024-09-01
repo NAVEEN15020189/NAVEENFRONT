@@ -9,7 +9,7 @@ const EditOffer2 = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4002/Offers`)
+      .get(`https://naveenhealthcarebackend.onrender.com/offer`)
       .then((res) => {
       
      setTreatmentText(res.data);
@@ -21,7 +21,7 @@ const EditOffer2 = () => {
 
   const editData = (id) => {
     axios
-      .get(`http://localhost:4002/Offers/${id}`)
+      .get(`https://naveenhealthcarebackend.onrender.com/offer/${id}`)
       .then((res) => {
         setId(res.data.id);
         setOffer(res.data.offer);
@@ -37,7 +37,7 @@ const EditOffer2 = () => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:4002/Offers/${id}`, { id,offer })
+      .put(`https://naveenhealthcarebackend.onrender.com/offer/${id}`, { id,offer })
       .then((res) => {
         alert("student updated  sucessfully.......");
        
@@ -51,7 +51,7 @@ const EditOffer2 = () => {
   };
   return (
     <>
-      <h1>
+      <h1 className='text-center'>
         Edit <span className="text-danger">Offer</span>{" "}
       </h1>
 
@@ -89,10 +89,10 @@ const EditOffer2 = () => {
                     className=" form-control btn btn-success"
                   ></input>
                 </div>
-                <div className={`${modulecss}container mt-5`}>
+                <div className={`${modulecss}container mt-5 table-responsive`}>
                   <div className="row ">
                     <div className="col-lg-12">
-                      <table className="table table-bordered display hover">
+                      <table className="table table-bordered display hover" id="myTable">
                         <thead>
                           <tr>
                             <th>id</th>

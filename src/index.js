@@ -7,9 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.js'
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
+// import 'jquery/dist/jquery.min.js'
+// import 'datatables.net-dt/css/dataTables.dataTables.min.css'
+// import  'datatables.net-dt/js/dataTables.dataTables.min.js'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <BrowserRouter>
     <App />

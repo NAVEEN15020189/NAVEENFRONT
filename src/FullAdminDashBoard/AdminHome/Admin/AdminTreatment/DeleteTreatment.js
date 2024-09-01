@@ -7,7 +7,7 @@ const DeleteTreatment = () => {
   const [treatment, setTreatment] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:4000/Treatments")
+      .get("https://naveenhealthcarebackend.onrender.com/treatment")
       .then((res) => {
         setTreatment(res.data);
       })
@@ -16,7 +16,7 @@ const DeleteTreatment = () => {
       });
   });
   let deleteData=(id)=>{
-  axios.delete(`http://localhost:4000/Treatments/${id}`)
+  axios.delete(`https://naveenhealthcarebackend.onrender.com/treatment/${id}`)
   .then(()=>{
   alert("deleted record sucessfully....")
   })
@@ -26,15 +26,15 @@ const DeleteTreatment = () => {
   }
   return (
     <>
-    <h1> Delete <span className='text-danger'>Treatment</span></h1>
+    <h1 className='text-center'> Delete <span className='text-danger'>Treatment</span></h1>
 
 
 
 
-    <div className={`${modulecss}container`} >
+    <div className={`${modulecss}container table-responsive`} >
 <div className="row">
 <div className="col-lg-12">
-  <table className='table table-bordered display hover' id="example" >
+  <table className='table table-bordered display hover'id="myTable" >
  
       <thead>
         <tr >
@@ -49,7 +49,7 @@ const DeleteTreatment = () => {
           
               <tr key={stu.id}>
                 <td>{stu.id}</td>
-                <td>{stu.treatment}</td>
+                <td>{stu.TreatmentName}</td>
 
                 <td className="d-flex">
                   <button

@@ -5,12 +5,12 @@ import modulecss from "../../Style.module.css";
 const AddTreatment = () => {
   
   const [id,setId]=useState('');
-  const [treatment,setTreatment]=useState('');
+  const [TreatmentName,setTreatment]=useState('');
   
   let submitHandler=(e)=>{
   e.preventDefault();
 
-  axios.post("http://localhost:4000/Treatments",{id,treatment})
+  axios.post("https://naveenhealthcarebackend.onrender.com/treatment",{id,TreatmentName})
   .then((res)=>{
       alert("data posted sucessfully")
       setTreatment("")
@@ -21,7 +21,7 @@ const AddTreatment = () => {
 }
   return (
     <>
-    <h1>Add <span className='text-danger'>Treatment</span></h1>
+    <h1 className='text-center'>Add <span className='text-danger'>Treatment</span></h1>
     <div className="container my-5 ">
 
 <div className="row">
@@ -33,7 +33,7 @@ const AddTreatment = () => {
      
     </div>
     <div className="col-md-12 ">
-      <textarea name="Message"  placeholder="Add Treatment" className="form-control mb-5 " value={treatment} onChange={(e)=>setTreatment(e.target.value)}/>
+      <textarea name="Message"  placeholder="Add Treatment" className="form-control mb-5 " value={TreatmentName} onChange={(e)=>setTreatment(e.target.value)}/>
       <input type="submit" placeholder="Send Message" className=" form-control btn btn-success " ></input>
     
     </div>

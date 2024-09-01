@@ -10,7 +10,7 @@ const EditOffer = () => {
 
     useEffect(() => {
       axios
-        .get(`http://localhost:4002/Offers/${sno}`)
+        .get(`https://naveenhealthcarebackend.onrender.com/offer/${sno}`)
         .then((res) => {
           setId(res.data.id);
           setOffer(res.data.offer);
@@ -27,7 +27,7 @@ const EditOffer = () => {
      
      e.preventDefault();
 
-     axios.put(`http://localhost:4002/Offers/${sno}`,{id,offer})
+     axios.put(`https://naveenhealthcarebackend.onrender.com/offer/${sno}`,{id,offer})
      .then((res)=>{
     alert('student updated  sucessfully.......')
    
@@ -44,7 +44,7 @@ const EditOffer = () => {
 
   return (
     <>
-    <h1>Edit <span className='text-danger' >Doctor</span> </h1>
+    <h1 className='text-center'>Edit <span className='text-danger' >Offers</span> </h1>
     
  <div className="container my-5 ">
 

@@ -9,7 +9,7 @@ const EditDoctor2 = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4001/Doctors`)
+      .get(`https://naveenhealthcarebackend.onrender.com/doctor`)
       .then((res) => {
       
      setTreatmentText(res.data);
@@ -21,10 +21,10 @@ const EditDoctor2 = () => {
 
   const editData = (id) => {
     axios
-      .get(`http://localhost:4001/Doctors/${id}`)
+      .get(`https://naveenhealthcarebackend.onrender.com/doctor/${id}`)
       .then((res) => {
         setId(res.data.id);
-        setDoctor(res.data.Doctor);
+        setDoctor(res.data.doctor);
 
       
       })
@@ -37,7 +37,7 @@ const EditDoctor2 = () => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:4001/Doctors/${id}`, { id,Doctor })
+      .put(`https://naveenhealthcarebackend.onrender.com/doctor/${id}`, { id,Doctor })
       .then((res) => {
         alert("student updated  sucessfully.......");
        
@@ -51,8 +51,8 @@ const EditDoctor2 = () => {
   };
   return (
     <>
-      <h1>
-        Edit <span className="text-danger">Treatment</span>{" "}
+      <h1 className='text-center'>
+        Edit <span className="text-danger">Doctor</span>{" "}
       </h1>
 
       <div className="container my-5 ">
@@ -89,14 +89,14 @@ const EditDoctor2 = () => {
                     className=" form-control btn btn-success"
                   ></input>
                 </div>
-                <div className={`${modulecss}container mt-5`}>
+                <div className={`${modulecss}container mt-5 table-responsive`}>
                   <div className="row ">
                     <div className="col-lg-12">
-                      <table className="table table-bordered display hover">
+                      <table className="table table-bordered display hover  " id="myTable">
                         <thead>
                           <tr>
                             <th>id</th>
-                            <th>lnews</th>
+                            <th>doctor</th>
                             <th></th>
                           </tr>
                         </thead>
@@ -105,7 +105,7 @@ const EditDoctor2 = () => {
                             return (
                               <tr key={stu.id}>
                                 <td>{stu.id}</td>
-                                <td>{stu.Doctor}</td>
+                                <td>{stu.doctor}</td>
 
                                 <td className="d-flex">
                                   <button

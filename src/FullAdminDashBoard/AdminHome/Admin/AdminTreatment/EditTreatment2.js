@@ -5,11 +5,11 @@ import modulecss from "../../Style.module.css";
 const EditTreatment2 = () => {
   const [id, setId] = useState([]);
   const [treatmenttext, setTreatmentText] = useState([]);
-  const [treatment, setTreatment] = useState("");
+  const [TreatmentName, setTreatment] = useState("");
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/Treatments`)
+      .get(`https://naveenhealthcarebackend.onrender.com/treatment`)
       .then((res) => {
       
      setTreatmentText(res.data);
@@ -21,10 +21,10 @@ const EditTreatment2 = () => {
 
   const editData = (id) => {
     axios
-      .get(`http://localhost:4000/Treatments/${id}`)
+      .get(`https://naveenhealthcarebackend.onrender.com/treatment/${id}`)
       .then((res) => {
         setId(res.data.id);
-        setTreatment(res.data.treatment);
+        setTreatment(res.data.TreatmentName);
 
       
       })
@@ -37,7 +37,7 @@ const EditTreatment2 = () => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:4000/Treatments/${id}`, { id, treatment })
+      .put(`https://naveenhealthcarebackend.onrender.com/treatment/${id}`, { id, TreatmentName })
       .then((res) => {
         alert("student updated  sucessfully.......");
        
@@ -51,7 +51,7 @@ const EditTreatment2 = () => {
   };
   return (
     <>
-      <h1>
+      <h1 className='text-center'>
         Edit <span className="text-danger">Treatment</span>{" "}
       </h1>
 
@@ -80,7 +80,7 @@ const EditTreatment2 = () => {
                     name="Message"
                     placeholder="Add Latest News"
                     className="form-control mb-5"
-                    value={treatment}
+                    value={TreatmentName}
                     onChange={(e) => setTreatment(e.target.value)}
                   />
                   <input
@@ -89,10 +89,10 @@ const EditTreatment2 = () => {
                     className=" form-control btn btn-success"
                   ></input>
                 </div>
-                <div className={`${modulecss}container mt-5`}>
+                <div className={`${modulecss}container mt-5 table-responsive`}>
                   <div className="row ">
                     <div className="col-lg-12">
-                      <table className="table table-bordered display hover">
+                      <table className="table table-bordered display hover" id="myTable">
                         <thead>
                           <tr>
                             <th>id</th>
@@ -105,7 +105,7 @@ const EditTreatment2 = () => {
                             return (
                               <tr key={stu.id}>
                                 <td>{stu.id}</td>
-                                <td>{stu.treatment}</td>
+                                <td>{stu.TreatmentName}</td>
 
                                 <td className="d-flex">
                                   <button

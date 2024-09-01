@@ -3,32 +3,41 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    
 }
 
+.treatmentcard{
+    height: 530px !important;
+}
+.treatmentcard img{
+    height: 200px !important;
+}
 .boxshadow{
     box-shadow: 3px 4px 4px 5px;
-    margin: 20px 20px;
+    margin: 20px ;
 }
 
+    .boxshadowadmin{
+        box-shadow: 3px 4px 4px 5px;
+        padding: 30px;
+    }
+
+
 .navbrand{
-    width: 100px !important ;
-    height: 100px !important;
+    width: 50px !important ;
+
    margin-left: 130px;
 }
 
-.navlink{
-    color: white !important;
- 
-    
-}
+
 .navlink:hover{
-   background-color: blue !important;
-   color: white !important;
+   color: rgb(5, 118, 159) !important;
+ 
 }
 
 .breadCrumb h3{
-    background-color: chocolate !important;
-    padding: 20px 0px;
+    background-color: rgb(224, 139, 12) !important;
+    padding: 35px 0px;
     text-align: center;
     
    width: 100% ;
@@ -41,7 +50,7 @@ footer{
     background-color: rgb(224, 139, 12);
    color: white;
    margin-top: 20px;
- position: fixed;
+
    bottom: 0px;
 
    width: 100%;
@@ -49,7 +58,7 @@ footer{
 
 footer p{
     margin-bottom: 0px;
-  margin: 30px 0px;
+ padding: 35px !important;
 }
 
 .banner{
@@ -97,7 +106,7 @@ footer p{
 .navtext{
     color: black !important;
  
-}
+} 
 
 
 

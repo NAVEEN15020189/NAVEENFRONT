@@ -5,15 +5,15 @@ import modulecss from "../../Style.module.css";
 const EditTreatment = () => {
    const{sno}=useParams()
   const [id,setId]=useState('');
-    const [treatment,setTreatment]=useState('');
+    const [TreatmentName,setTreatment]=useState('');
     const navigate= useNavigate();
 
     useEffect(() => {
       axios
-        .get(`http://localhost:4000/Treatments/${sno}`)
+        .get(`https://naveenhealthcarebackend.onrender.com/treatment/${sno}`)
         .then((res) => {
           setId(res.data.id);
-          setTreatment(res.data.treatment);
+          setTreatment(res.data.TreatmentName);
         })
         .catch((err) => {
           console.log(err);
@@ -27,7 +27,7 @@ const EditTreatment = () => {
      
      e.preventDefault();
 
-     axios.put(`http://localhost:4000/Treatments/${sno}`,{id,treatment})
+     axios.put(`https://naveenhealthcarebackend.onrender.com/treatment/${sno}`,{id,TreatmentName})
      .then((res)=>{
     alert('student updated  sucessfully.......')
    
@@ -41,7 +41,7 @@ const EditTreatment = () => {
   
   return (
     <>
-    <h1>Edit <span className='text-danger' >Treatment</span> </h1>
+    <h1 className='text-center'>Edit <span className='text-danger' >Treatment</span> </h1>
     
  <div className="container my-5 ">
 
@@ -55,7 +55,7 @@ const EditTreatment = () => {
      
     </div>
     <div className="col-md-12">
-      <textarea name="Message"  placeholder="Add Latest News" className="form-control mb-5" value={treatment} onChange={(e)=>setTreatment(e.target.value)}/>
+      <textarea name="Message"  placeholder="Add Latest News" className="form-control mb-5" value={TreatmentName} onChange={(e)=>setTreatment(e.target.value)}/>
       <input type="submit" placeholder="Send Message" className=" form-control btn btn-success" ></input>
     </div>
     </div>

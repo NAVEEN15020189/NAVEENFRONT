@@ -10,10 +10,10 @@ const EditDoctor = () => {
 
     useEffect(() => {
       axios
-        .get(`http://localhost:4001/Doctors/${sno}`)
+        .get(`https://naveenhealthcarebackend.onrender.com/doctor/${sno}`)
         .then((res) => {
           setId(res.data.id);
-          setDoctor(res.data.Doctor);
+          setDoctor(res.data.doctor);
         })
         .catch((err) => {
           console.log(err);
@@ -27,7 +27,7 @@ const EditDoctor = () => {
      
      e.preventDefault();
 
-     axios.put(`http://localhost:4001/Doctors/${sno}`,{id,Doctor})
+     axios.put(`https://naveenhealthcarebackend.onrender.com/doctor/${sno}`,{id,Doctor})
      .then((res)=>{
     alert('student updated  sucessfully.......')
    
@@ -44,7 +44,7 @@ const EditDoctor = () => {
 
   return (
     <>
-    <h1>Edit <span className='text-danger' >Doctor</span> </h1>
+    <h1 className='text-center'>Edit <span className='text-danger' >Doctor</span> </h1>
     
  <div className="container my-5 ">
 

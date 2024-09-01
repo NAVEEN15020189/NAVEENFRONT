@@ -10,7 +10,7 @@ const DeleteAppointment = () => {
     
   useEffect(() => {
     axios
-      .get("http://localhost:4007/BookAppointments")
+      .get("https://naveenhealthcarebackend.onrender.com/Appointment")
       .then((res) => {
      
         setAppointment(res.data);
@@ -21,7 +21,7 @@ const DeleteAppointment = () => {
       });
   },[]);
   let deleteData=(id)=>{
-  axios.delete(`http://localhost:4007/BookAppointments/${id}`)
+  axios.delete(`https://naveenhealthcarebackend.onrender.com/Appointment/${id}`)
   .then(()=>{
   alert("deleted record sucessfully....")
   })
@@ -31,15 +31,15 @@ const DeleteAppointment = () => {
   }
   return (
     <>
-    <h1> Delete <span className='text-danger'>Appointment</span></h1>
+    <h1 className='text-center'> Delete <span className='text-danger'>Appointment</span></h1>
 
 
 
 
-    <div className={`${modulecss}container`} >
+    <div className={`${modulecss}container table-responsive`} >
 <div className="row">
 <div className="col-lg-12">
-  <table className='table table-bordered display hover' id="example" >
+  <table className='table table-bordered display hover overflow-scroll' id='myTable'  >
  
       <thead>
         <tr >
@@ -48,6 +48,7 @@ const DeleteAppointment = () => {
         <th> treatment</th>
         <th>BookingDate</th>
         <th>status</th>
+        <th></th>
         </tr>
       </thead>
       <tbody>
@@ -66,7 +67,7 @@ const DeleteAppointment = () => {
                   <button
                     className="btn btn-danger bi bi-trash"
                     onClick={() => {
-                      deleteData(stu.id);
+                      deleteData(stu?.id);
                     }}
                   ></button>
                   &nbsp;

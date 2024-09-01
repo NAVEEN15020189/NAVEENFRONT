@@ -7,7 +7,7 @@ const DeleteOffer = () => {
   const [offer, setOffer] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:4002/Offers")
+      .get("https://naveenhealthcarebackend.onrender.com/offer")
       .then((res) => {
         setOffer(res.data);
       })
@@ -16,7 +16,7 @@ const DeleteOffer = () => {
       });
   });
   let deleteData=(id)=>{
-  axios.delete(`http://localhost:4002/Offers/${id}`)
+  axios.delete(`https://naveenhealthcarebackend.onrender.com/offer/${id}`)
   .then(()=>{
   alert("deleted record sucessfully....")
   })
@@ -26,20 +26,21 @@ const DeleteOffer = () => {
   }
   return (
     <>
-    <h1> Delete <span className='text-danger'>Offer</span></h1>
+    <h1 className='text-center'> Delete <span className='text-danger'>Offer</span></h1>
 
 
 
 
     <div className={`${modulecss}container`} >
-<div className="row">
+<div className="row table-responsive">
 <div className="col-lg-12">
-  <table className='table table-bordered display hover' id="example" >
+  <table className='table table-bordered display hover ' id="myTable" >
  
       <thead>
         <tr >
           <th>id</th>
           <th>Doctor Names</th>
+          <th></th>
         
         </tr>
       </thead>

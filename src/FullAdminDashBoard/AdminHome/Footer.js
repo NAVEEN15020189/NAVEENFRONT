@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     
          <div>
-       <footer className='postion-fixed bottom-0'>
+       <footer className=' '>
       <div className={modulecss} >
       <div className='container'>
         <div className='row '>

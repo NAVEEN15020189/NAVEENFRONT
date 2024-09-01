@@ -13,7 +13,7 @@ const EditAppointment = () => {
 
     useEffect(() => {
       axios
-        .get(`http://localhost:4007/BookAppointments/${sno}`)
+        .get(`https://naveenhealthcarebackend.onrender.com/Appointment/${sno}`)
         .then((res) => {
           setId(res.data.id);
           setPatientName(res.data.patientname);
@@ -33,7 +33,7 @@ const EditAppointment = () => {
      
      e.preventDefault();
 
-     axios.put(`http://localhost:4007/BookAppointments/${sno}`,{id,patientname,TreatmentName,BookingDate,status})
+     axios.put(`https://naveenhealthcarebackend.onrender.com/Appointment/${sno}`,{id,patientname,TreatmentName,BookingDate,status})
      .then((res)=>{
     alert('student updated  sucessfully.......')
    
@@ -50,7 +50,7 @@ const EditAppointment = () => {
 
   return (
     <>
-    <h1>Edit <span className='text-danger' >Appointment</span> </h1>
+    <h1 className='text-center'>Edit <span className='text-danger' >Appointment</span> </h1>
     
  <div className="container my-5 ">
 

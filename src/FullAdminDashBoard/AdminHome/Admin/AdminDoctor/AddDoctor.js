@@ -11,7 +11,7 @@ const AddDoctor = () => {
       let submitHandler=(e)=>{
       e.preventDefault();
     
-      axios.post("http://localhost:4001/Doctors",{id,doctor})
+      axios.post("https://naveenhealthcarebackend.onrender.com/doctor",{id,doctor})
       .then((res)=>{
           alert("data posted sucessfully")
           setDoctor("")
@@ -22,7 +22,7 @@ const AddDoctor = () => {
     }
       return (
         <>
-        <h1>Add <span className='text-danger'>Doctor</span></h1>
+        <h1 className='text-center'>Add <span className='text-danger'>Doctor</span></h1>
         <div className="container my-5 ">
     
     <div className="row">

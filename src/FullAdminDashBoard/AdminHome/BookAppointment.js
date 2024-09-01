@@ -20,13 +20,13 @@ const BookAppointment = () => {
   const submitHandler=(e)=>{
   
 
-    axios.post(`http://localhost:4007/BookAppointments`,{id,patientname,TreatmentName,BookingDate})
+    axios.post(`https://naveenhealthcarebackend.onrender.com/Appointment`,{id,patientname,TreatmentName,BookingDate})
     .then((res)=>{
       setId("")
       setPatientName("")
       setTreatment("")
       setDate("")
-      alert("")
+      alert("data posted sucess fully")
     })
     .catch((error)=>{
       console.log(error)

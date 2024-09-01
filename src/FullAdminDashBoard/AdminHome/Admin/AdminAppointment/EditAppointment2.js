@@ -12,7 +12,7 @@ const EditAppointment2 = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4007/BookAppointments`)
+      .get(`https://naveenhealthcarebackend.onrender.com/Appointment`)
       .then((res) => {  
      setTreatmentText(res.data);
       })
@@ -23,7 +23,7 @@ const EditAppointment2 = () => {
 
   const editData = (id) => {
     axios
-      .get(`http://localhost:4007/BookAppointments/${id}`)
+      .get(`https://naveenhealthcarebackend.onrender.com/Appointment/${id}`)
       .then((res) => {
         setId(res.data.id);
         setPatientName(res.data.patientname);
@@ -41,7 +41,7 @@ const EditAppointment2 = () => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:4001/Doctors/${id}`, {id,patientname,TreatmentName,BookingDate,status})
+      .put(`https://naveenhealthcarebackend.onrender.com/Appointment/${id}`, {id,patientname,TreatmentName,BookingDate,status})
       .then((res) => {
         alert("student updated  sucessfully.......");
        
@@ -58,8 +58,8 @@ const EditAppointment2 = () => {
   };
   return (
     <>
-      <h1>
-        Edit <span className="text-danger">Treatment</span>{" "}
+      <h1 className='text-center'>
+        Edit <span className="text-danger">Appointment</span>{" "}
       </h1>
 
       <div className="container my-5 ">
@@ -86,7 +86,7 @@ const EditAppointment2 = () => {
                   <input
                     type="text"
                     name="id"
-                    placeholder="Id"
+                    placeholder="patientname"
                     className="form-control mb-5"
                     value={patientname}
                     onChange={(e) =>  setPatientName(e.target.value)}
@@ -97,7 +97,7 @@ const EditAppointment2 = () => {
                   <input
                     type="text"
                     name="id"
-                    placeholder="Id"
+                    placeholder="TreatmentName"
                     className="form-control mb-5"
                     value={TreatmentName}
                     onChange={(e) => setTreatment(e.target.value)}
@@ -107,7 +107,7 @@ const EditAppointment2 = () => {
                   <input
                     type="text"
                     name="id"
-                    placeholder="Id"
+                    placeholder="BookingDate"
                     className="form-control mb-5"
                     value={BookingDate}
                     onChange={(e) =>  setDate(e.target.value)}
@@ -117,7 +117,7 @@ const EditAppointment2 = () => {
                 <div className="col-md-12">
                   <textarea
                     name="Message"
-                    placeholder="Add Latest News"
+                    placeholder="patientname"
                     className="form-control mb-5"
                     value={patientname}
                     onChange={(e) => setPatientName(e.target.value)}
@@ -126,7 +126,7 @@ const EditAppointment2 = () => {
                   <input
                     type="text"
                     name="id"
-                    placeholder="Id"
+                    placeholder="status"
                     className="form-control mb-5"
                     value={status}
                     onChange={(e) =>  setStatus(e.target.value)}
@@ -139,10 +139,10 @@ const EditAppointment2 = () => {
                     className=" form-control btn btn-success"
                   ></input>
                 </div>
-                <div className={`${modulecss}container mt-5`}>
+                <div className={`${modulecss}container mt-5 table-responsive`}>
                   <div className="row ">
                     <div className="col-lg-12">
-                      <table className="table table-bordered display hover">
+                      <table className="table table-bordered display hover "  id='myTable'>
                         <thead>
                           <tr>
                             <th>id</th>
@@ -150,7 +150,7 @@ const EditAppointment2 = () => {
                             <th>TreatmentName</th>
                             <th>BookingDate</th>
                             <th>status</th>
-                           
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>

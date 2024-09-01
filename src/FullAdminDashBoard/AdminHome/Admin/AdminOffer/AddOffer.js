@@ -9,7 +9,7 @@ const AddOffer = () => {
     let submitHandler=(e)=>{
     e.preventDefault();
   
-    axios.post("http://localhost:4002/Offers",{id,offer})
+    axios.post("https://naveenhealthcarebackend.onrender.com/offer",{id,offer})
     .then((res)=>{
         alert("data posted sucessfully")
         setOffer("")
@@ -20,7 +20,7 @@ const AddOffer = () => {
   }
     return (
       <>
-      <h1>Add <span className='text-danger'>Offer</span></h1>
+      <h1 className='text-center'>Add <span className='text-danger'>Offer</span></h1>
       <div className="container my-5 ">
   
   <div className="row">
