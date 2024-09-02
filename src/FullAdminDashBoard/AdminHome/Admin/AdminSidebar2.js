@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 const AdminSidebar2 = () => {
   return (
     <div>
-      <div className={`container  ${modulecss.boxshadow}  `}>
-        <div className="row bg-secondary text-centers ">
+      <div className={`container  ${modulecss.boxshadow}   `}>
+        <div className="row bg-secondary text-center ">
           <div className="col-12 col-lg-12 mt-5  "  >
             <NavLink to="" className="text-white  text-decoration-none">AddTreatment</NavLink>
           </div>
