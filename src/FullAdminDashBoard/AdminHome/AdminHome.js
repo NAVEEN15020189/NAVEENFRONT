@@ -27,7 +27,7 @@ const AdminHome = () => {
       .catch((err) => {
         console.log(err);
       });
-  });
+  },[]);
 
   const submitHandler = (e) => {
     axios
@@ -46,7 +46,7 @@ const AdminHome = () => {
       })
       .catch((error) => {
         console.log(error);
-      });
+      },[]);
   };
   return (
     <div className={modulecss}>

@@ -327,9 +327,9 @@ const Treatment = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {treatment1.map((stu, index) => {
+                    {treatment1.map((stu) => {
                       return (
-                        <tr key={stu.index}>
+                        <tr key={stu.id}>
                           <td>{stu.id}</td>
                           <td>{stu.TreatmentName}</td>
                         </tr>
